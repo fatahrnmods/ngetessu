@@ -6,13 +6,13 @@ RUN apt-get update -y > /dev/null 2>&1 && apt-get upgrade -y > /dev/null 2>&1 &&
 RUN wget -O ngrok.zip https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-stable-linux-amd64.zip > /dev/null 2>&1 \ 
      && unzip ngrok.zip 
 RUN echo "./ngrok config add-authtoken 2JaiAWKOJhh7FRWIdIGWWEhEl3O_6PHCFHKnMfuZUsJd2NZp5 &&" >>/kali.sh \ 
-     && echo "./ngrok tcp --region=jp 22 &>/dev/null &" >>/kali.sh \ 
+     && echo "./ngrok tcp --region=sg 22 &>/dev/null &" >>/kali.sh \ 
      && echo 'mkdir -p /run/sshd' >>/kali.sh \ 
      && echo '/usr/sbin/sshd -D' >>/kali.sh \ 
      && echo 'echo "By Radhin Development"' >> /kali.sh 
 RUN echo 'PermitRootLogin yes' >> /etc/ssh/sshd_config \ 
      && echo "PasswordAuthentication yes" >> /etc/ssh/sshd_config \ 
-     && echo root:damar23629|chpasswd 
+     && echo root:1102//07|chpasswd 
 RUN service ssh start 
 RUN chmod 755 /kali.sh 
 EXPOSE 22 80 8888 8080 443 5130 5131 5132 5133 5134 5135 3306 
